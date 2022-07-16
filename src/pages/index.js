@@ -32,6 +32,7 @@ const IndexPage = () => {
   const [rotation, setRotation] = useState(0)
   const [scale] = useState(0)
   const [sideBar, setSideBar] = useState(false)
+  const [startAnim, setStartAnim] = useState(true)
 
   return (
     <div className="">
@@ -74,7 +75,7 @@ const IndexPage = () => {
                   scale: [scale, scale + 1.25, scale + 1],
                   rotate: [rotation, rotation + 360],
                 }} 
-                transition ={{ duration: 0.5, delay: 0.8 }} onClick={() => {setRotation(rotation + 360)}}
+                transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => {setRotation(rotation + 360); setStartAnim(false)}}
                 className="w-20 h-20 rounded-full">
                   <ActionIcon />
                 </motion.svg>
