@@ -39,7 +39,7 @@ const Contact = () => {
                 exit={{ opacity: 0 }}
             >
                 <div id="container">
-                    <nav className={`fixed flex px-5 mt-12 mb-6 w-full ${sideBar ? 'flex-row-reverse' : 'flex-row'}`}>
+                    <nav className={`fixed flex px-5 pt-12 pb-6 w-full bg-white ${sideBar ? 'flex-row-reverse' : 'flex-row'}`}>
                         <div id="menu-button">
                         {sideBar ? (
                             <motion.div animate={{ rotate: 360 }} transition={{ duration: 0.5 }}>
@@ -65,7 +65,7 @@ const Contact = () => {
                             <Link to="/">
                             <motion.div 
                                 id="nextpage" 
-                                className="flex flex-row items-center pt-3 gap-4"
+                                className="flex flex-row items-center pt-3 pb-20 gap-4"
                                 animate={{ scale: [scale, scale + 1.1, scale + 1] }}
                                 transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => setStartAnim(false)}
                             >
