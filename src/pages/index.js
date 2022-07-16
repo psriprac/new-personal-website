@@ -38,11 +38,12 @@ const IndexPage = () => {
       <div className="">
         <nav className={`fixed flex px-5 mt-12 mb-6 w-full ${sideBar ? 'flex-row-reverse' : 'flex-row'}`}>
           <div id="menu-button">
-            {sideBar ? <BackIcon onClick={() => {
-                setSideBar((sideBar) => !sideBar)
-              }} /> : <BurgerIcon onClick={() => {
-                setSideBar((sideBar) => !sideBar)
-              }} />}
+            {sideBar ? (
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 0.5 }}>
+                <BackIcon onClick={() => {
+                  setSideBar((sideBar) => !sideBar)
+                }} />  
+              </motion.div>) : <BurgerIcon onClick={() => { setSideBar((sideBar) => !sideBar) }} />}
           </div>
         </nav>
         <div id="pop-in">
@@ -59,7 +60,7 @@ const IndexPage = () => {
           transition={{ 
             style: "spring", 
             bounce: 0, 
-            duration: 1.2,
+            duration: 0.5,
             delay: sideBar ? 0 : 0.5
           }} 
           className=""
@@ -72,7 +73,8 @@ const IndexPage = () => {
                 <motion.svg animate={{
                   scale: [scale, scale + 1.25, scale + 1],
                   rotate: [rotation, rotation + 360],
-                }} onClick={() => {setRotation(rotation + 360)}}
+                }} 
+                transition ={{ duration: 0.5, delay: 0.8 }} onClick={() => {setRotation(rotation + 360)}}
                 className="w-20 h-20 rounded-full">
                   <ActionIcon />
                 </motion.svg>
