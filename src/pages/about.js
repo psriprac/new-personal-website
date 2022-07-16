@@ -54,13 +54,13 @@ const About = () => {
                     </div>
                     <motion.div 
                         id="main-text" 
-                        className="flex flex-col justify-center gap-4 h-screen mx-7 md:mx-24 lg:mx-60"
+                        className="flex flex-col gap-4 h-screen mx-7 md:mx-24 lg:mx-60 lg:justify-center"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: sideBar ? 0 : 1, display: sideBar ? "none" : "flex" }}
                         exit={{ opacity: 0 }}
                         transition={{ style: "spring", bounce: 0, duration: 0.5, delay: sideBar ? 0 : 0.5 }}
                     >
-                        <div className="text-2xl flex flex-col gap-4 pt-5">
+                        <div className="text-2xl flex flex-col gap-4 pt-28">
                             <p>I started using HTML on xanga.com (who the heck remembers that) in 2003.</p>
                             <p>Then, came MySpace, where my styling skills came to life when I changed my top 8 to top16.</p>
                             <p>I quit school in 2009, to make music, work in the real world, and figure out life.</p>
