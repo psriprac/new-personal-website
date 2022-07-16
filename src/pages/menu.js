@@ -1,5 +1,4 @@
 import * as React from "react"
-import BackIcon from "../images/Back-Icon.svg"
 import HomeIcon from "../images/Home-Icon.svg"
 import AboutIcon from "../images/About-Icon.svg"
 import ProjectsIcon from "../images/Projects-Icon.svg"
@@ -9,7 +8,7 @@ import ContactIcon from "../images/Contact-Icon.svg"
 const MenuPage = () => {
     return (
         <div id="container" className="bg-[#57f179] h-screen -mb-24">
-            <div id="nav-page" className="grid grid-rows-6 h-full gap-8 mx-16 md:mx-24 lg:mx-60">
+            <div id="nav-page" className="grid grid-rows-6 h-full gap-8 mx-16 md:mx-24 lg:mx-60 justify-center lg:justify-start">
                 <div id="back-button" className="flex flex-row self-end items-center gap-4">
 {/*                     <BackIcon className=""/>
                     <h1 className="text-4xl">Back</h1> */}
