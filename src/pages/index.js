@@ -8,6 +8,7 @@ import MenuPage from "./menu"
 
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
+import { Link } from "gatsby"
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
   return (
@@ -35,8 +36,14 @@ const IndexPage = () => {
   const [startAnim, setStartAnim] = useState(true)
 
   return (
-    <div className="">
-      <div className="">
+    <AnimatePresence>
+      <motion.div 
+        className=""
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
         <nav className={`fixed flex px-5 mt-12 mb-6 w-full ${sideBar ? 'flex-row-reverse' : 'flex-row'}`}>
           <div id="menu-button">
             {sideBar ? (
@@ -71,21 +78,27 @@ const IndexPage = () => {
               <h1 className="text-5xl mx-7 mb-5 md:mx-24 lg:mx-60">Hi, I'm Patrick</h1>
               <h3 className="text-2xl mx-7 md:mx-24 lg:mx-60">I'm a web developer currently working as an IT support professional.</h3>
               <div id="action-icon" className="mx-7 mt-5 drop-shadow-xl md:mx-24 lg:mx-60">
-                <motion.svg animate={{
+                <motion.svg 
+                animate={{
                   scale: [scale, scale + 1.25, scale + 1],
                   rotate: [rotation, rotation + 360],
                 }} 
-                transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => {setRotation(rotation + 360); setStartAnim(false)}}
+                transition={{ 
+                  duration: 0.5, delay: startAnim ? 0.8 : 0 
+                }} 
+                onClick={() => {setRotation(rotation + 360); setStartAnim(false)}}
                 className="w-20 h-20 rounded-full">
-                  <ActionIcon />
+                  <AnimatePresence>
+                    <Link to="/about"><ActionIcon /></Link>
+                  </AnimatePresence>
                 </motion.svg>
               </div>
             </div>
           </div>
         </motion.div>
         <div id="footer" className="h-1"></div>
-      </div>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   )
 }
 
