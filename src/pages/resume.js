@@ -21,6 +21,7 @@ import CPPIcon from "../images/cpp.svg"
 import PythonIcon from "../images/python.svg"
 import FaunaIcon from "../images/fauna.svg"
 import MongoIcon from "../images/mongodb.svg"
+import FramerIcon from "../images/framer.svg"
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     return (
@@ -157,6 +158,7 @@ const Resume = () => {
                                 <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GatsbyJS</p><GatsbyIcon className="w-7 h-7"/></li>
                                 <li className="py-2"><p className="relative left-8 -top-1 -mb-7">ReactJS</p><ReactIcon className="w-7 h-7"/></li>
                                 <li className="py-2"><p className="relative left-8 -top-1 -mb-7">TailwindCSS</p><TailwindIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Framer Motion</p><FramerIcon className="w-7 h-7"/></li>
                                 <li className="py-2"><p className="relative left-8 -top-1 -mb-7">FaunaDB</p><FaunaIcon className="w-7 h-7"/></li>
                                 <li className="py-2"><p className="relative left-8 -top-1 -mb-7">MongoDB</p><MongoIcon className="w-7 h-7"/></li>
                                 <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Netlify</p><NetlifyIcon className="w-7 h-7"/></li>
