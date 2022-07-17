@@ -64,7 +64,7 @@ const Contact = () => {
                         <div className="flex flex-col">
                             <h1 className="text-5xl py-8">I'd love to hear from you</h1>
 
-                            <form name="contactForm" data-netlify="true">
+                            <form name="contactForm" method="post" data-netlify="true">
                                 <ul>
                                     <input type="hidden" name="form-name" value="contactForm" />  
                                     <li className="flex flex-col py-1">
