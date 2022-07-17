@@ -62,17 +62,6 @@ const Contact = () => {
                         transition={{ style: "spring", bounce: 0, duration: 0.5, delay: sideBar ? 0 : 0.5 }}
                     >
                         <div className="flex flex-col">
-                        <Link to="/">
-                            <motion.div 
-                                id="nextpage" 
-                                className="flex flex-row items-center gap-4"
-                                animate={{ scale: [scale, scale + 1.1, scale + 1] }}
-                                transition={{ duration: 0.5, delay: startAnim ? 2 : 0 }} onClick={() => setStartAnim(false)}
-                            >
-                                <h1 className="text-4xl">Back to Home</h1>
-                                <BackIcon style={{transform: "rotate(180deg)"}}/>
-                            </motion.div>
-                            </Link>
                             <h1 className="text-5xl py-8">I'd love to hear from you</h1>
 
                             <form name="contactForm" data-netlify="true">
@@ -90,7 +79,24 @@ const Contact = () => {
                                         <label htmlFor="msg" className="text-2xl">Message:</label>
                                         <textarea id="msg" name="user_msg" className="bg-slate-200 p-2 rounded resize-none h-36"/>
                                     </li>
-                                    <li className="flex flex-row-reverse py-1">
+                                    <li className="flex flex-row justify-between items-center py-1">
+                                        <Link to="/">
+                                            <motion.div 
+                                                id="nextpage" 
+                                                className="flex flex-row items-center gap-4"
+                                                animate={{ scale: [scale, scale + 1.1, scale + 1] }}
+                                                transition={{ duration: 0.5, delay: startAnim ? 2 : 0 }} onClick={() => setStartAnim(false)}
+                                            >
+                                                <motion.button 
+                                                    className="bg-[#57f179] rounded-full p-5"
+                                                    whileTap={{ scale: 0.9 }}
+                                                    whileHover={{ scale: 1.1 }}
+                                                >
+                                                    <h1 className="text-2xl">Back to Home</h1>
+                                                </motion.button>
+                                                {/* <BackIcon style={{transform: "rotate(0deg)"}}/> */}
+                                            </motion.div>
+                                        </Link>
                                         <motion.div
                                             whileTap={{ scale: 0.9 }}
                                             whileHover={{ scale: 1.1 }}

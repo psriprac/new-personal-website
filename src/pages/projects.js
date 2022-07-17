@@ -62,17 +62,22 @@ const Projects = () => {
                     >
                         <div>
                             <h1 className="text-5xl py-8">Coming Soon...</h1>
-                            <Link to="/resume">
                             <motion.div 
                                 id="nextpage" 
                                 className="flex flex-row items-center pt-3 pb-20 gap-4"
                                 animate={{ scale: [scale, scale + 1.1, scale + 1] }}
                                 transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => setStartAnim(false)}
                             >
-                                <h1 className="text-4xl">Resume</h1>
-                                <BackIcon style={{transform: "rotate(180deg)"}}/>
+                                <Link to="/resume">
+                                    <motion.button 
+                                        className="bg-[#57f179] rounded-full p-5"
+                                        whileTap={{ scale: 0.9 }}
+                                        whileHover={{ scale: 1.1 }}
+                                    >
+                                        <h1 className="text-2xl">Resume</h1>
+                                    </motion.button>
+                                </Link>
                             </motion.div>
-                            </Link>
                         </div>
                     </motion.div>
                 </div>

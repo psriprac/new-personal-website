@@ -67,17 +67,22 @@ const About = () => {
                             <p>I went back to school and graduated in 2020 with my degree in Computer Science.</p>
                             <p>Today, I spend my days studying the web, cooking good food, and playing great video games.</p>
                         </div>
-                        <Link to="/projects">
                             <motion.div 
                                 id="nextpage" 
                                 className="flex flex-row items-center pt-3 pb-20 gap-4"
                                 animate={{ scale: [scale, scale + 1.1, scale + 1] }}
                                 transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => setStartAnim(false)}
                             >
-                                <h1 className="text-4xl">Projects</h1>
-                                <BackIcon style={{transform: "rotate(180deg)"}}/>
+                                <Link to="/projects">
+                                    <motion.button 
+                                        className="bg-[#57f179] rounded-full p-5"
+                                        whileTap={{ scale: 0.9 }}
+                                        whileHover={{ scale: 1.1 }}
+                                    >
+                                        <h1 className="text-2xl">Projects</h1>
+                                    </motion.button>
+                                </Link>
                             </motion.div>
-                        </Link>
                     </motion.div>
                 </div>
             </motion.div>
