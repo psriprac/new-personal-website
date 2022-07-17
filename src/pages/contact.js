@@ -77,6 +77,7 @@ const Contact = () => {
 
                             <form name="contactForm" netlify>
                                 <ul>
+                                    <input type="hidden" name="form-name" value="contactForm" />  
                                     <li className="flex flex-col py-1">
                                         <label htmlFor="name" className="text-2xl">Name:</label>
                                         <input type="text" id="name" name="user_name" className="bg-slate-200 p-2 rounded"/>
