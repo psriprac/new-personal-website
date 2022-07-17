@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `new personal website`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Patrick Sriprachandr`,
+    siteUrl: `https://www.sriprachandr.netlify.com`
   },
   plugins: ["gatsby-plugin-netlify", "gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
@@ -16,6 +16,11 @@ module.exports = {
       rule: {
         include: /images/
       }
+    }
+  }, {
+    resolve: 'gatsby-plugin-manifest',
+    options: {
+      icon: 'src/images/site-icon.svg'
     }
   }]
 };

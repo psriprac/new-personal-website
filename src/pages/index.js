@@ -44,7 +44,7 @@ const IndexPage = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        <nav className={`fixed flex px-5 pt-12 pb-6 w-full bg-white ${sideBar ? 'flex-row-reverse' : 'flex-row'}`}>
+        <nav className={`fixed flex px-5 pt-12 pb-6 w-full z-40 bg-white ${sideBar ? 'flex-row-reverse' : 'flex-row'}`}>
           <div id="menu-button">
             {sideBar ? (
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 0.5 }}>
@@ -55,7 +55,7 @@ const IndexPage = () => {
           </div>
         </nav>
         <div id="pop-in">
-          <Sidebar {...{ sideBar, setSideBar }} className="relative"/>
+          <Sidebar {...{ sideBar, setSideBar }} className="fixed z-50"/>
         </div>
         <motion.div 
           initial={{ opacity: 0 }}
