@@ -75,7 +75,7 @@ const Contact = () => {
                             </Link>
                             <h1 className="text-5xl py-8">I'd love to hear from you</h1>
 
-                            <form name="contactForm">
+                            <form name="contactForm" netlify>
                                 <ul>
                                     <li className="flex flex-col py-1">
                                         <label htmlFor="name" className="text-2xl">Name:</label>
