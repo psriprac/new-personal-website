@@ -117,7 +117,7 @@ const Resume = () => {
                                 <li>Created process standards for IT Hardware Asset Management.</li>
                                 <li>Maintained enterprise Active Directory containing over 1200 members.</li>
                                 <li>Implemented standard ticketing processes with ServiceNow.</li>
-                                <li>Provisioned and deprovisioned computers and deployed hardware for on-side and remote end-users.</li>
+                                <li>Provisioned and deprovisioned computers and deployed hardware for on-site and remote end-users.</li>
                             </ul>
 
                             <div className="flex flex-row text-base justify-between pt-2">
