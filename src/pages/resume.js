@@ -87,7 +87,7 @@ const Resume = () => {
                     >
                         <div id="name-and-info">
                             <h1 className="text-3xl font-bold">Patrick Sriprachandr</h1>
-                            <h3 className="text-xl">San Diego, CA<br />psriprac@gmail.com</h3>
+                            <h3 className="text-xl">San Diego, CA<br />psriprac@gmail.com<br />https://sriprachandr.netlify.app/</h3>
                         </div>
 
                         <div id="education">
@@ -102,10 +102,10 @@ const Resume = () => {
                         <div id="experience">
                             <h2 className="text-2xl font-bold border-b-2">Experience</h2>
                             <div className="flex flex-row text-base justify-between pt-2">
-                                <p className="font-bold">ICW Group</p>
+                                <p className="text-base font-bold">Desktop Technician II</p>
                                 <p className="text-right text-gray-400">May 2021 to Present</p>
                             </div>
-                            <p className="text-base italic">Desktop Technician II</p>
+                            <p className="italic">ICW Group</p>
                             <ul className="list-disc pl-5">
                                 <li>Resolved level 1 and level 2 IT issues in an enterprise environment.</li>
                                 <li>Configured, maintained, and supported virtual machines with VMWare Horizon VDI.</li>
@@ -119,10 +119,10 @@ const Resume = () => {
                             </ul>
 
                             <div className="flex flex-row text-base justify-between pt-2">
-                                <p className="font-bold">Geek Squad</p>
+                                <p className="font-bold">Advanced Repair Agent</p>
                                 <p className="text-right text-gray-400">Jan 2018 to May 2021</p>
                             </div>
-                            <p className="text-base italic">Advanced Repair Agent</p>
+                            <p className="text-base italic">Geek Squad</p>
                             <ul className="list-disc pl-5">
                                 <li>Performed diagnoses, troubleshooting, and repair of consumer electronics.</li>
                                 <li>Apple Certified iOS Technician under Apple's Authorized Service Program.</li>
@@ -136,10 +136,10 @@ const Resume = () => {
                             </ul>
 
                             <div className="flex flex-row text-base justify-between pt-2">
-                                <p className="font-bold">SeaWorld San Diego</p>
+                                <p className="font-bold">Assistant Supervisor</p>
                                 <p className="text-right text-gray-400">Apr 2013 to Jan 2018</p>
                             </div>
-                            <p className="text-base italic">Assistant Supervisor</p>
+                            <p className="text-base italic">SeaWorld San Diego</p>
                             <ul className="list-disc pl-5">
                                 <li>Lead front gate ticket sales, guest service, parking, and tollbooth operations.</li>
                                 <li>Completed fast-paced and short-term daily objectives.</li>
