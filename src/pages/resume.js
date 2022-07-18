@@ -22,6 +22,7 @@ import PythonIcon from "../images/python.svg"
 import FaunaIcon from "../images/fauna.svg"
 import MongoIcon from "../images/mongodb.svg"
 import FramerIcon from "../images/framer.svg"
+import Downloadable from "../files/ResumePS-071722.pdf"
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     return (
@@ -71,7 +72,9 @@ const Resume = () => {
                             transition={{ duration: sideBar ? 0 : 0.2 }}
                             whileTap={{ scale: 0.8 }}
                         >
-                            <DownloadIcon />
+                            <a href={Downloadable} target="blank">
+                                <DownloadIcon />
+                            </a>
                         </motion.div>
                     </nav>
                     <div id="pop-in">
@@ -113,7 +116,6 @@ const Resume = () => {
                                 <li>Optimized, manages, and deployed base images for 200+ VMware VDI Desktops.</li>
                                 <li>Created process standards for IT Hardware Asset Management.</li>
                                 <li>Maintained enterprise Active Directory containing over 1200 members.</li>
-                                <li>Deployed hardware and software solutions to internal users.</li>
                                 <li>Implemented standard ticketing processes with ServiceNow.</li>
                                 <li>Provisioned and deprovisioned computers and deployed hardware for on-side and remote end-users.</li>
                             </ul>
@@ -131,7 +133,6 @@ const Resume = () => {
                                 <li>Replaced various hardware components to consumer laptops and desktops including the CPU, storage device, power supply, motherboard, and battery.</li>
                                 <li>Deployed program software, patches, and operating systems to desktops and laptops.</li>
                                 <li>Managed ticket repair queue using proprietary ticketing system.</li>
-                                <li>Developed strong business relationships with clients and end-users.</li>
                                 <li>Provided clients and end-users multiple software and hardware repair solutions.</li>
                             </ul>
 
