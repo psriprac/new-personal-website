@@ -192,7 +192,7 @@ const Resume = () => {
                             >
                                 <Link to="/contact">
                                     <motion.button 
-                                        className="bg-[#57f179] rounded-full p-5"
+                                        className="bg-[#57f179] rounded-full p-7"
                                         whileTap={{ scale: 0.9 }}
                                         whileHover={{ scale: 1.1 }}
                                     >

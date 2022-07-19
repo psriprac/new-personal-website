@@ -75,10 +75,10 @@ const Contact = () => {
                 alert('Success');
                 actions.resetForm()
             })
-                .catch(() => {
-                alert('Error');
+            .catch(() => {
+            alert('Error');
             })
-                .finally(() => actions.setSubmitting(false))
+            .finally(() => actions.setSubmitting(false))
         }
     });
 
@@ -168,7 +168,7 @@ const Contact = () => {
                                                 transition={{ duration: 0.5, delay: startAnim ? 2 : 0 }} onClick={() => setStartAnim(false)}
                                             >
                                                 <motion.button 
-                                                    className="bg-[#57f179] rounded-full p-5"
+                                                    className="bg-[#57f179] rounded-full p-7"
                                                     whileTap={{ scale: 0.9 }}
                                                     whileHover={{ scale: 1.1 }}
                                                 >
@@ -181,9 +181,17 @@ const Contact = () => {
                                             whileTap={{ scale: 0.9 }}
                                             whileHover={{ scale: 1.1 }}
                                         >
-                                            <button type="submit">
-                                                <ActionIcon style={{transform: "rotate(270deg)"}}/>
-                                            </button>
+                                            {
+                                                formik.isValid && formik.dirty ? (
+                                                <motion.button 
+                                                    type="submit" 
+                                                    initial={{ scale: 0 }}
+                                                    animate={{ scale: 1 }}
+                                                    exit={{ scale: 0 }}>
+                                                    <ActionIcon style={{transform: "rotate(270deg)"}}/>
+                                                </motion.button>
+                                                ) : null
+                                            }
                                         </motion.div>
                                     </li>
                                 </ul>

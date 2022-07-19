@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Patrick Sriprachandr`,
-    siteUrl: `https://www.sriprachandr.netlify.com`
+    siteUrl: `https://www.sriprachandr.netlify.app`
   },
   plugins: ["gatsby-plugin-netlify", "gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
