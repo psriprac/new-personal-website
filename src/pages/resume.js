@@ -22,7 +22,7 @@ import PythonIcon from "../images/python.svg"
 import FaunaIcon from "../images/fauna.svg"
 import MongoIcon from "../images/mongodb.svg"
 import FramerIcon from "../images/framer.svg"
-import Downloadable from "../files/ResumePS-071722.pdf"
+import Downloadable from "../files/ResumePS.pdf"
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     return (
@@ -143,11 +143,11 @@ const Resume = () => {
                             <p className="text-base italic">SeaWorld San Diego</p>
                             <ul className="list-disc pl-5">
                                 <li>Lead front gate ticket sales, guest service, parking, and tollbooth operations.</li>
-                                <li>Completed fast-paced and short-term daily objectives.</li>
+                                <li>Completed fast paced and short-term daily objectives.</li>
                                 <li>Managed a team of up to 200 to create excellent guest arrival experiences.</li>
                                 <li>Resolved ticket admission and guest experience conflicts.</li>
                                 <li>Revised and created standard operating procedures for front gate operations.</li>
-                                <li>Prepared bi-weely schedules for up to 200 team members.</li>
+                                <li>Prepared bi-weekly schedules for up to 200 team members.</li>
                             </ul>
                         </div>
                         <div id="dev-tech">
