@@ -53,7 +53,7 @@ const Contact = () => {
         }
 
         if (!values.msg) { errors.msg = 'Required' }
-        else if (values.msg.length > 255) { errors.msg = 'Max limit of 255 characters' }
+        else if (values.msg.length > 999) { errors.msg = 'Max limit of 999 characters' }
 
         return errors
     }
@@ -190,7 +190,11 @@ const Contact = () => {
                                                     exit={{ scale: 0 }}>
                                                     <ActionIcon style={{transform: "rotate(270deg)"}}/>
                                                 </motion.button>
-                                                ) : null
+                                                ) : <button 
+                                                        aria-label="fill-form" 
+                                                        disabled={!(formik.isValid && formik.dirty)}>
+                                                            <ActionIcon style={{ opacity: 0.25, transform: "rotate(270deg)" }}/>
+                                                    </button>
                                             }
                                         </motion.div>
                                     </li>
