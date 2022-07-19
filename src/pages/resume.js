@@ -31,7 +31,7 @@ function Sidebar({ sideBar = false, setSideBar = () => {} }) {
             <>
             <motion.div
                 initial={{ x: "-100%" }}
-                animate={{ x: "-64px" }}
+                animate={{ x: "0px" }}
                 exit={{ x: "-100%" }}
                 transition={{ style: "spring", bounce: 0, duration: 0.5 }}
             >
@@ -57,14 +57,14 @@ const Resume = () => {
                 exit={{ opacity: 0 }}
             >
                 <div id="container">
-                    <nav className={`fixed flex px-5 pt-12 pb-6 w-full z-40 justify-between bg-white ${sideBar ? 'flex-row-reverse' : 'flex-row'}`}>
+                    <nav className={`fixed flex px-5 pt-12 pb-6 w-full z-40 justify-between bg-white flex-row`}>
                         <div id="menu-button">
                         {sideBar ? (
                             <motion.div animate={{ rotate: 360 }} transition={{ duration: 0.5 }}>
-                                <BackIcon onClick={() => {
+                                <button><BackIcon onClick={() => {
                                 setSideBar((sideBar) => !sideBar)
-                                }} />  
-                            </motion.div>) : <BurgerIcon onClick={() => { setSideBar((sideBar) => !sideBar) }} />}
+                                }} />  </button>
+                            </motion.div>) : <button> <BurgerIcon onClick={() => { setSideBar((sideBar) => !sideBar) }} /> </button>}
                         </div>
                         <motion.div 
                             id="download"
