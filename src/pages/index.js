@@ -1,7 +1,6 @@
 import * as React from "react"
 
 import BurgerIcon from "../images/Burger.svg"
-import ActionIcon from "../images/Action-Button.svg"
 import BackIcon from "../images/Back-Icon.svg"
 
 import MenuPage from "./menu"
@@ -30,7 +29,6 @@ function Sidebar({ sideBar = false, setSideBar = () => {} }) {
 }
 
 const IndexPage = () => {
-  const [rotation, setRotation] = useState(0)
   const [scale] = useState(0)
   const [sideBar, setSideBar] = useState(false)
   const [startAnim, setStartAnim] = useState(true)
@@ -78,7 +76,7 @@ const IndexPage = () => {
               <h1 className="text-5xl mx-7 mb-5 md:mx-24 lg:mx-60">Hi, I'm Patrick</h1>
               <h3 className="text-2xl mx-7 md:mx-24 lg:mx-60">I'm a web developer currently working as an IT support professional.</h3>
               <div id="action-icon" className="mx-7 mt-5 drop-shadow-xl md:mx-24 lg:mx-60">
-                <motion.svg 
+{/*                 <motion.svg 
                 animate={{
                   scale: [scale, scale + 1.25, scale + 1],
                   rotate: [rotation, rotation + 360],
@@ -87,11 +85,24 @@ const IndexPage = () => {
                   duration: 0.5, delay: startAnim ? 0.8 : 0 
                 }} 
                 onClick={() => {setRotation(rotation + 360); setStartAnim(false)}}
-                className="w-20 h-20 rounded-full">
-                  <AnimatePresence>
-                    <Link to="/about"><ActionIcon /></Link>
-                  </AnimatePresence>
-                </motion.svg>
+                className="w-20 h-20 rounded-full"> */}
+                  <Link to="/about">
+                    <motion.div 
+                      id="nextpage" 
+                      className="flex flex-row items-center gap-4"
+                      animate={{ scale: [scale, scale + 1.1, scale + 1] }}
+                      transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => setStartAnim(false)}
+                      >
+                      <motion.button 
+                        className="bg-[#57f179] rounded-full p-5"
+                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.1 }}
+                        >
+                        <h1 className="text-2xl">About Me</h1>
+                      </motion.button>
+                    </motion.div>
+                  </Link>
+{/*                 </motion.svg> */}
               </div>
             </div>
           </div>
