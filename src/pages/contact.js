@@ -1,7 +1,10 @@
 import * as React from "react"
+
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
 import { Link } from "gatsby"
+import { useFormik } from "formik"
+
 import MenuPage from "./menu"
 import BackIcon from "../images/Back-Icon.svg"
 import BurgerIcon from "../images/Burger.svg"
@@ -26,10 +29,58 @@ function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     )
 }
 
+const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 const Contact = () => {
     const [sideBar, setSideBar] = useState(false)
     const [scale] = useState(0)
     const [startAnim, setStartAnim] = useState(true)
+
+    const validate = (values) => {
+        const errors = {}
+
+        if (!values.name) { errors.name = 'Required' }
+        else if (values.name.length < 2) { errors.name = 'Must be 2 characters or more' }
+
+        if (!values.email) { errors.email = 'Required' }
+        else if (values.email.length < 2) { errors.email = 'Must be 2 characters or more' }
+        else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+            errors.email = 'Invalid email address'
+        }
+
+        if (!values.msg) { errors.msg = 'Required' }
+        else if (values.msg.length > 255) { errors.msg = 'Max limit of 255 characters' }
+
+        return errors
+    }
+
+    const formik = useFormik({
+        initialValues:{
+            name: '',
+            email: '',
+            message: ''
+        },
+        validate,
+        onSubmit: (values, actions) => {
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contactForm", ...values })
+            })
+            .then(() => {
+                alert('Success');
+                actions.resetForm()
+            })
+                .catch(() => {
+                alert('Error');
+            })
+                .finally(() => actions.setSubmitting(false))
+        }
+    });
 
     return (
         <AnimatePresence>
@@ -64,20 +115,49 @@ const Contact = () => {
                         <div className="flex flex-col">
                             <h1 className="text-5xl py-8">I'd love to hear from you</h1>
 
-                            <form name="contactForm" method="post" data-netlify="true">
+                            <form name="contactForm" data-netlify="true">
                                 <ul>
                                     <input type="hidden" name="form-name" value="contactForm" />  
                                     <li className="flex flex-col py-1">
-                                        <label htmlFor="name" className="text-2xl">Name:</label>
-                                        <input type="text" id="name" name="user_name" className="bg-slate-200 p-2 rounded"/>
+                                        <label htmlFor="name" className="text-2xl flex flex-row justify-between">
+                                            Name 
+                                            {formik.touched.name && formik.errors.name ? <div className="text-red-500 text-base">{formik.errors.name}</div> : null}
+                                        </label>
+                                        <input 
+                                            onChange={formik.handleChange} 
+                                            onBlur={formik.handleBlur}
+                                            value={formik.values.name} 
+                                            type="text" 
+                                            id="name" 
+                                            name="name" 
+                                            className="bg-slate-200 p-2 rounded"/>
                                     </li>
                                     <li className="flex flex-col py-1">
-                                        <label htmlFor="email" className="text-2xl">Email:</label>
-                                        <input type="text" id="email" name="user_email" className="bg-slate-200 p-2 rounded"/>
+                                        <label htmlFor="email" className="text-2xl flex flex-row justify-between">
+                                            Email 
+                                            {formik.touched.email && formik.errors.email ? <div className="text-red-500 text-base">{formik.errors.email}</div> : null}
+                                        </label>
+                                        <input 
+                                            onChange={formik.handleChange} 
+                                            onBlur={formik.handleBlur}
+                                            value={formik.values.email} 
+                                            type="text" 
+                                            id="email" 
+                                            name="email" 
+                                            className="bg-slate-200 p-2 rounded"/>
                                     </li>
                                     <li className="flex flex-col py-1">
-                                        <label htmlFor="msg" className="text-2xl">Message:</label>
-                                        <textarea id="msg" name="user_msg" className="bg-slate-200 p-2 rounded resize-none h-36"/>
+                                        <label htmlFor="msg" className="text-2xl flex flex-row justify-between">
+                                            Message 
+                                            {formik.touched.msg && formik.errors.msg ? <div className="text-red-500 text-base">{formik.errors.msg}</div> : null}
+                                        </label>
+                                        <textarea 
+                                            onChange={formik.handleChange} 
+                                            onBlur={formik.handleBlur}
+                                            value={formik.values.msg} 
+                                            id="msg" 
+                                            name="msg" 
+                                            className="bg-slate-200 p-2 rounded resize-none h-36"/>
                                     </li>
                                     <li className="flex flex-row justify-between items-center py-1">
                                         <Link to="/">
@@ -101,7 +181,9 @@ const Contact = () => {
                                             whileTap={{ scale: 0.9 }}
                                             whileHover={{ scale: 1.1 }}
                                         >
-                                            <ActionIcon onClick={() => {document.forms["contactForm"].submit()}} style={{transform: "rotate(270deg)"}}/>
+                                            <button type="submit">
+                                                <ActionIcon style={{transform: "rotate(270deg)"}}/>
+                                            </button>
                                         </motion.div>
                                     </li>
                                 </ul>
