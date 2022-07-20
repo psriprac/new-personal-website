@@ -5,6 +5,8 @@ import { Link } from "gatsby"
 import MenuPage from "./menu"
 import BackIcon from "../images/Back-Icon.svg"
 import BurgerIcon from "../images/Burger.svg"
+import Card from "../components/card"
+import { useStaticQuery, graphql } from "gatsby"
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     return (
@@ -29,6 +31,25 @@ const Projects = () => {
     const [sideBar, setSideBar] = useState(false)
     const [scale] = useState(0)
     const [startAnim, setStartAnim] = useState(true)
+    
+    const data = useStaticQuery(graphql`
+    query MyQuery {
+        file(relativePath: {eq: "png/tictac.png"}) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+              aspectRatio
+              base64
+              sizes
+              src
+              srcSet
+            }
+          }
+        }
+      }
+    `)
+
+    const img = data.file.childImageSharp.fluid
 
     return (
         <AnimatePresence>
@@ -61,7 +82,30 @@ const Projects = () => {
                         transition={{ style: "spring", bounce: 0, duration: 0.5, delay: sideBar ? 0 : 0.5 }}
                     >
                         <div>
-                            <h1 className="text-5xl py-8">Coming Soon...</h1>
+                            <h1 className="text-5xl py-8">Projects</h1>
+                            
+                            <div id="main-content" className="grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 justify-center gap-5">
+                                <Card 
+                                    projectName="Tic-Tac-Toe" 
+                                    prevImg={img}
+                                    alt="Tic-Tac-Toe"
+                                    description="Simple tic-tac-toe game made with Plain HTML, CSS, and JavaScript"
+                                    tags="#HTML #CSS #JavaScript"
+                                    githubLink="https://github.com/psriprac/tic-tac-toe"
+                                    previewLink="https://psriprac.github.io/tic-tac-toe/"
+                                    />
+                                <Card 
+                                    projectName="NextJS Blog" 
+                                    alt="NextJS Blog"
+                                    description="Coming soon..."
+                                    />
+                                <Card 
+                                    projectName="Task app" 
+                                    alt="Task app"
+                                    description="Coming soon..."
+                                    />
+                            </div>
+                          
                             <motion.div 
                                 id="nextpage" 
                                 className="flex flex-row items-center pt-3 pb-20 gap-4"

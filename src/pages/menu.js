@@ -27,10 +27,10 @@ const MenuPage = () => {
                             <AboutIcon />
                             <h1 className="text-4xl">About</h1>
                         </Link>
-{/*                         <Link to="/projects" id="projects" className="flex flex-row items-center gap-4">
+                        <Link to="/projects" id="projects" className="flex flex-row items-center gap-4">
                             <ProjectsIcon />
                             <h1 className="text-4xl">Projects</h1>
-                        </Link> */}
+                        </Link>
                         <Link to="/resume" id="resume" className="flex flex-row items-center gap-4">
                             <ResumeIcon />
                             <h1 className="text-4xl">Resume</h1>

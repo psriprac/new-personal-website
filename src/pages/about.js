@@ -73,13 +73,13 @@ const About = () => {
                                 animate={{ scale: [scale, scale + 1.1, scale + 1] }}
                                 transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => setStartAnim(false)}
                             >
-                                <Link to="/resume">
+                                <Link to="/projects">
                                     <motion.button 
                                         className="bg-[#57f179] rounded-full p-7"
                                         whileTap={{ scale: 0.9 }}
                                         whileHover={{ scale: 1.1 }}
                                     >
-                                        <h1 className="text-2xl">Resume</h1>
+                                        <h1 className="text-2xl">Projects</h1>
                                     </motion.button>
                                 </Link>
                             </motion.div>
