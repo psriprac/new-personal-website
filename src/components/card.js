@@ -21,14 +21,14 @@ const Card = (props) => {
                     </div>
                     <div id="buttons" className="grid grid-cols-2 items-center gap-2 p-2">
                         {props.githubLink ? 
-                            <a href={props.githubLink} target="blank" className="grid">
+                            <a href={props.githubLink} target="_blank" rel="noreferrer" className="grid">
                                 <motion.button whileHover={{ opacity: 0.5, scale: 0.9 }} whileTap={{ scale: 0.9 }} className="rounded-lg bg-[#57f179] py-2">
                                     GitHub
                                 </motion.button>
                             </a>
                         : null}
                         {props.previewLink ?
-                            <a href={props.previewLink} target="blank" className="grid">
+                            <a href={props.previewLink} target="_blank" rel="noreferrer" className="grid">
                                 <motion.button whileHover={{ opacity: 0.5, scale: 0.9 }} whileTap={{ scale: 0.8 }} className="rounded-lg bg-[#57f179] py-2">
                                     Preview
                                 </motion.button>
