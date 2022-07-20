@@ -34,22 +34,24 @@ const Projects = () => {
     
     const data = useStaticQuery(graphql`
     query MyQuery {
-        file(relativePath: {eq: "png/tictac.png"}) {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
+        allFile(filter: {relativeDirectory: {eq: "png"}}) {
+          edges {
+            node {
+              childImageSharp {
+                fluid {
+                  srcSet
+                  src
+                  sizes
+                  base64
+                  aspectRatio
+                }
+              }
             }
           }
         }
       }
     `)
-
-    const img = data.file.childImageSharp.fluid
+    const imgs = data.allFile.edges
 
     return (
         <AnimatePresence>
@@ -87,7 +89,7 @@ const Projects = () => {
                             <div id="main-content" className="grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 justify-center gap-5">
                                 <Card 
                                     projectName="Tic-Tac-Toe" 
-                                    prevImg={img}
+                                    prevImg={imgs[0].node.childImageSharp.fluid}
                                     alt="Tic-Tac-Toe"
                                     description="Simple tic-tac-toe game made with Plain HTML, CSS, and JavaScript"
                                     tags="#HTML #CSS #JavaScript"
@@ -95,13 +97,16 @@ const Projects = () => {
                                     previewLink="https://psriprac.github.io/tic-tac-toe/"
                                     />
                                 <Card 
-                                    projectName="NextJS Blog" 
-                                    alt="NextJS Blog"
-                                    description="Coming soon..."
+                                    projectName="Personal Website" 
+                                    prevImg={imgs[1].node.childImageSharp.fluid}
+                                    alt="Personal Website"
+                                    description="This website! Built with GatsbyJS, TailwindCSS, and Framer Motion."
+                                    tags="#GatsbyJS #TailwindCSS #Framer-Motion"
+                                    githubLink="https://github.com/psriprac/new-personal-website"
                                     />
                                 <Card 
-                                    projectName="Task app" 
-                                    alt="Task app"
+                                    projectName="NextJS Blog" 
+                                    alt="NextJS Blog"
                                     description="Coming soon..."
                                     />
                             </div>
