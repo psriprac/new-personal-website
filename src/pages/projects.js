@@ -91,7 +91,7 @@ const Projects = () => {
                                     projectName="Tic-Tac-Toe" 
                                     prevImg={imgs[0].node.childImageSharp.fluid}
                                     alt="Tic-Tac-Toe"
-                                    description="Simple tic-tac-toe game made with Plain HTML, CSS, and JavaScript"
+                                    description="Simple tic-tac-toe game made with Plain HTML, CSS, and JavaScript."
                                     tags="#HTML #CSS #JavaScript"
                                     githubLink="https://github.com/psriprac/tic-tac-toe"
                                     previewLink="https://psriprac.github.io/tic-tac-toe/"
@@ -106,8 +106,12 @@ const Projects = () => {
                                     />
                                 <Card 
                                     projectName="NextJS Blog" 
+                                    prevImg={imgs[2].node.childImageSharp.fluid}
                                     alt="NextJS Blog"
-                                    description="Coming soon..."
+                                    description="A sample blog made with NextJS fetching data from Contenful with a GraphQL API."
+                                    tags="#NextJS #TailwindCSS #Contentful #GraphQL"
+                                    githubLink="https://github.com/psriprac/nextjs-blog"
+                                    previewLink="https://sriprachandr-blog.netlify.app/"
                                     />
                             </div>
                           
