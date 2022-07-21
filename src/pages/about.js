@@ -62,7 +62,7 @@ const About = () => {
                     >
                         <div className="text-2xl flex flex-col gap-4 pt-28">
                             <p>I started using HTML on xanga.com (who the heck remembers that) in 2003.</p>
-                            <p>Then, came MySpace, where my styling skills came to life when I changed my top 8 to top16.</p>
+                            <p>Then, came MySpace, where my styling skills came to life when I changed my top 8 to top 16.</p>
                             <p>I quit school in 2009, to make music, work in the real world, and figure out life.</p>
                             <p>I went back to school and graduated in 2020 with my degree in Computer Science.</p>
                             <p>Today, I spend my days studying the web, cooking good food, and playing great video games.</p>
