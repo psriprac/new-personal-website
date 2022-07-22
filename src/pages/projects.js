@@ -89,7 +89,7 @@ const Projects = () => {
                             <div id="main-content" className="grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 justify-center gap-5">
                                 <Card 
                                     projectName="Tic-Tac-Toe" 
-                                    prevImg={imgs[2].node.childImageSharp.fluid}
+                                    prevImg={imgs[0].node.childImageSharp.fluid}
                                     alt="Tic-Tac-Toe"
                                     description="Simple tic-tac-toe game made with Plain HTML, CSS, and JavaScript."
                                     tags="#HTML #CSS #JavaScript"
@@ -106,7 +106,7 @@ const Projects = () => {
                                     />
                                 <Card 
                                     projectName="NextJS Blog" 
-                                    prevImg={imgs[0].node.childImageSharp.fluid}
+                                    prevImg={imgs[2].node.childImageSharp.fluid}
                                     alt="NextJS Blog"
                                     description="A sample blog made with NextJS fetching data from Contenful with a GraphQL API."
                                     tags="#NextJS #TailwindCSS #Contentful #GraphQL"
