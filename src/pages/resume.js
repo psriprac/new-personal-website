@@ -22,7 +22,12 @@ import PythonIcon from "../images/python.svg"
 import FaunaIcon from "../images/fauna.svg"
 import MongoIcon from "../images/mongodb.svg"
 import FramerIcon from "../images/framer.svg"
+import NextIcon from "../images/nextjs.svg"
+import ContentfulIcon from "../images/contentful.svg"
+import GraphQLIcon from "../images/graphql.svg"
+
 import Downloadable from "../files/ResumePS.pdf"
+
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     return (
@@ -82,7 +87,7 @@ const Resume = () => {
                     </div>
                     <motion.div 
                         id="main-container" 
-                        className="flex flex-col w-auto pt-32 mx-7 md:mx-24 lg:mx-60 gap-8"
+                        className="flex flex-col w-auto pt-32 mx-7 md:mx-24 lg:mx-60 gap-2"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: sideBar ? 0 : 1, display: sideBar ? "none" : "flex" }}
                         exit={{ opacity: 0 }}
@@ -90,7 +95,11 @@ const Resume = () => {
                     >
                         <div id="name-and-info">
                             <h1 className="text-3xl font-bold">Patrick Sriprachandr</h1>
-                            <h3 className="text-xl">San Diego, CA<br />psriprac@gmail.com<br />https://sriprachandr.netlify.app/</h3>
+                            <h3 className="text-xl">
+                                San Diego, CA<br />psriprac@gmail.com<br />
+                                <a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a><br />
+                                <a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a>
+                            </h3>
                         </div>
 
                         <div id="education">
@@ -100,6 +109,77 @@ const Resume = () => {
                                 <p className="text-right text-gray-400">May 2020</p>
                             </div>
                             <p className="text-base italic">Bachelor of Science, Computer Science</p>
+                        </div>
+
+                        <div id="dev-tech">
+                            <h2 className="text-2xl font-bold border-b-2">Development Technologies</h2>
+                            <ul className="grid grid-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pl-5 pt-2 items-center">
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">HTML</p><HTMLIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">CSS</p><CSSIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Javascript</p><JSIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GatsbyJS</p><GatsbyIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">NextJS</p><NextIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">React</p><ReactIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">TailwindCSS</p><TailwindIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Framer Motion</p><FramerIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GraphQL</p><GraphQLIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">FaunaDB</p><FaunaIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">MongoDB</p><MongoIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Contentful</p><ContentfulIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Netlify</p><NetlifyIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GitHub</p><GitHubIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">VS Code</p><VSCIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Figma</p><FigmaIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">C++</p><CPPIcon className="w-7 h-7"/></li>
+                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Python</p><PythonIcon className="w-7 h-7"/></li>
+                            </ul>
+                        </div>
+
+                        <div id="projects">
+                            <h2 className="text-2xl font-bold border-b-2">Projects</h2>
+                            <div className="flex flex-row text-base justify-between pt-2">
+                                <p className="text-base font-bold">Sample Blog</p>
+                                <p className="text-right text-gray-400">July 2022</p>
+                            </div>
+                            <p className="italic">Solutions stack: NextJS, Contentful, GraphQL, Netlify, and TailwindCSS.</p>
+                            <a href="https://sriprachandr-blog.netlify.app" target="_blank" rel="noreferrer">Preview: https://sriprachandr-blog.netlify.app</a><br />
+                            <a href="https://github.com/psriprac/nextjs-blog" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/nextjs-blog</a>
+                            <ul className="list-disc pl-5">
+                                <li>Designed a responsive sample blog with NextJS and TailwindCSS.</li>
+                                <li>Implemented dynamic routing for blog posts.</li>
+                                <li>Fetched content from Contentful headless CMS.</li>
+                                <li>Queried data from content using GraphQL queries.</li>
+                                <li>Styled with TailwindCSS framework.</li>
+                                <li>Deployed to Netlify for CI/CD with GitHub and a build webhook to Contentful.</li>
+                            </ul>
+                            <div className="flex flex-row text-base justify-between pt-2">
+                                <p className="text-base font-bold">Personal Website</p>
+                                <p className="text-right text-gray-400">July 2022</p>
+                            </div>
+                            <p className="italic">Solutions stack: GatsbyJS, TailwindCSS, Netlify, and Framer Motion.</p>
+                            <a href="https://sriprachandr.netlify.app" target="_blank" rel="noreferrer">Preview: https://sriprachandr.netlify.app</a><br />
+                            <a href="https://github.com/psriprac/new-personal-website" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/new-personal-website</a>
+                            <ul className="list-disc pl-5">
+                                <li>Developed a responsive personal professional website, with a pages for a resume and portfolio.</li>
+                                <li>Designed and prototyped in Figma with a minimalist approach.</li>
+                                <li>Animated components with the Framer Motion library for React.</li>
+                                <li>Applied image optimization with the Gatsby Image library.</li>
+                                <li>Created a contact form with full input validation with Formik.</li>
+                                <li>Deployed to Netlify for CI/CD with GitHub.</li>
+                            </ul>
+                            <div className="flex flex-row text-base justify-between pt-2">
+                                <p className="text-base font-bold">Tic-Tac-Toe</p>
+                                <p className="text-right text-gray-400">May 2022</p>
+                            </div>
+                            <p className="italic">Solutions stack: HTML, CSS, and JavaScript.</p>
+                            <a href="https://psriprac.github.io/tic-tac-toe" target="_blank" rel="noreferrer">Preview: https://psriprac.github.io/tic-tac-toe</a><br />
+                            <a href="https://github.com/psriprac/tic-tac-toe" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/tic-tac-toe</a>
+                            <ul className="list-disc pl-5">
+                                <li>Developed 2-player tic-tac-toe game with custom styling.</li>
+                                <li>Implemented custom JavaScript rendering logic and DOM manipultion.</li>
+                                <li>Created UI updates for win conditions.</li>
+                                <li>Added reset functionality for replayability.</li>
+                            </ul>
                         </div>
                         
                         <div id="experience">
@@ -148,40 +228,6 @@ const Resume = () => {
                                 <li>Resolved ticket admission and guest experience conflicts.</li>
                                 <li>Revised and created standard operating procedures for front gate operations.</li>
                                 <li>Prepared bi-weekly schedules for up to 200 team members.</li>
-                            </ul>
-                        </div>
-                        <div id="dev-tech">
-                            <h2 className="text-2xl font-bold border-b-2">Development Technologies</h2>
-                            <ul className="grid grid-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pl-5 pt-2 items-center">
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">HTML</p><HTMLIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">CSS</p><CSSIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Javascript</p><JSIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GatsbyJS</p><GatsbyIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">ReactJS</p><ReactIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">TailwindCSS</p><TailwindIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Framer Motion</p><FramerIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">FaunaDB</p><FaunaIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">MongoDB</p><MongoIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Netlify</p><NetlifyIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GitHub</p><GitHubIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">VS Code</p><VSCIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Figma</p><FigmaIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">C++</p><CPPIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Python</p><PythonIcon className="w-7 h-7"/></li>
-                            </ul>
-                        </div>
-                        <div id="other-proficiencies">
-                            <h2 className="text-2xl font-bold border-b-2">Proficiencies</h2>
-                            <ul className="grid grid-row md:grid-cols-2 lg:grid-cols-3 list-disc px-5 pt-2">
-                                <li>VMware vSphere</li>
-                                <li>VMware Horizon</li>
-                                <li>VMware App Volumes</li>
-                                <li>ServiceNow</li>
-                                <li>HCL BigFix</li>
-                                <li>Active Directory</li>
-                                <li>Organization</li>
-                                <li>Problem Solving</li>
-                                <li>Interpersonal Communication</li>
                             </ul>
                         </div>
                             <motion.div 

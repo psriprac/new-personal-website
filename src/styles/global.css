@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+    @apply underline;
+    @apply decoration-[#57f179];
+}
