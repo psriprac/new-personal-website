@@ -118,7 +118,7 @@ const Resume = () => {
 
                         <div id="dev-tech">
                             <h2 className="text-2xl font-bold border-b-2">Development Technologies</h2>
-                            <ul className="grid grid-row grid-cols-4 md:grid-cols-3 lg:grid-cols-4 pl-5 pt-2 items-center">
+                            <ul className="grid grid-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pl-5 pt-2 items-center">
                                 <li className="py-0"><p className="relative left-8 -top-1 -mb-7">HTML</p><HTMLIcon className="w-5 h-[26px]"/></li>
                                 <li className="py-0"><p className="relative left-8 -top-1 -mb-7">CSS</p><CSSIcon className="w-5 h-[26px]"/></li>
                                 <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Javascript</p><JSIcon className="w-5 h-[26px]"/></li>
@@ -215,7 +215,6 @@ const Resume = () => {
                                 <li>Apple Certified iOS Technician under Apple's Authorized Service Program.</li>
                                 <li>Completed camera, battery, and screen repairs of Apple devices from iPhone 6 to iPhone 12.</li>
                                 <li>Translated high level technical terminology to end users that have little to no technical experience.</li>
-                                <li>Replaced various hardware components to consumer laptops and desktops including the CPU, storage device, power supply, motherboard, and battery.</li>
                                 <li>Deployed program software, patches, and operating systems to desktops and laptops.</li>
                                 <li>Managed ticket repair queue using proprietary ticketing system.</li>
                                 <li>Provided clients and end-users multiple software and hardware repair solutions.</li>
