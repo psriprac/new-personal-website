@@ -26,7 +26,7 @@ import NextIcon from "../images/nextjs.svg"
 import ContentfulIcon from "../images/contentful.svg"
 import GraphQLIcon from "../images/graphql.svg"
 
-import Downloadable from "../files/ResumePS.pdf"
+import Downloadable from "../files/ResumePS-072422.pdf"
 
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
