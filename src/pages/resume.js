@@ -97,12 +97,12 @@ const Resume = () => {
                             <h1 className="text-3xl font-bold">Patrick Sriprachandr</h1>
                             <h3 className="grid grid-cols-2 text-xl">
                                 <div id="left">
-                                <p>San Diego, CA</p>
-                                <p>psriprac@gmail.com</p>
+                                    <p>San Diego, CA</p>
+                                    <p>psriprac@gmail.com</p>
                                 </div>
                                 <div id="right" className="justify-self-end text-right">
-                                <p><a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a></p>
-                                <p><a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a></p>
+                                    <p><a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a></p>
+                                    <p><a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a></p>
                                 </div>
                             </h3>
                         </div>
