@@ -95,10 +95,15 @@ const Resume = () => {
                     >
                         <div id="name-and-info">
                             <h1 className="text-3xl font-bold">Patrick Sriprachandr</h1>
-                            <h3 className="text-xl">
-                                San Diego, CA<br />psriprac@gmail.com<br />
-                                <a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a><br />
-                                <a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a>
+                            <h3 className="grid grid-cols-2 text-xl">
+                                <div id="left">
+                                <p>San Diego, CA</p>
+                                <p>psriprac@gmail.com</p>
+                                </div>
+                                <div id="right" className="justify-self-end text-right">
+                                <p><a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a></p>
+                                <p><a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a></p>
+                                </div>
                             </h3>
                         </div>
 
@@ -113,25 +118,25 @@ const Resume = () => {
 
                         <div id="dev-tech">
                             <h2 className="text-2xl font-bold border-b-2">Development Technologies</h2>
-                            <ul className="grid grid-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pl-5 pt-2 items-center">
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">HTML</p><HTMLIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">CSS</p><CSSIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Javascript</p><JSIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GatsbyJS</p><GatsbyIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">NextJS</p><NextIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">React</p><ReactIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">TailwindCSS</p><TailwindIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Framer Motion</p><FramerIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GraphQL</p><GraphQLIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">FaunaDB</p><FaunaIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">MongoDB</p><MongoIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Contentful</p><ContentfulIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Netlify</p><NetlifyIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">GitHub</p><GitHubIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">VS Code</p><VSCIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Figma</p><FigmaIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">C++</p><CPPIcon className="w-7 h-7"/></li>
-                                <li className="py-2"><p className="relative left-8 -top-1 -mb-7">Python</p><PythonIcon className="w-7 h-7"/></li>
+                            <ul className="grid grid-row grid-cols-4 md:grid-cols-3 lg:grid-cols-4 pl-5 pt-2 items-center">
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">HTML</p><HTMLIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">CSS</p><CSSIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Javascript</p><JSIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">GatsbyJS</p><GatsbyIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">NextJS</p><NextIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">React</p><ReactIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">TailwindCSS</p><TailwindIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Framer Motion</p><FramerIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">GraphQL</p><GraphQLIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">FaunaDB</p><FaunaIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">MongoDB</p><MongoIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Contentful</p><ContentfulIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Netlify</p><NetlifyIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">GitHub</p><GitHubIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">VS Code</p><VSCIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Figma</p><FigmaIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">C++</p><CPPIcon className="w-5 h-[26px]"/></li>
+                                <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Python</p><PythonIcon className="w-5 h-[26px]"/></li>
                             </ul>
                         </div>
 
