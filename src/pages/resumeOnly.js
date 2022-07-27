@@ -1,12 +1,8 @@
 import * as React from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
-import { Link } from "gatsby"
 
 import MenuPage from "./menu"
-import BackIcon from "../images/Back-Icon.svg"
-import BurgerIcon from "../images/Burger.svg"
-import DownloadIcon from "../images/Download-Button.svg"
 import HTMLIcon from "../images/html.svg"
 import CSSIcon from "../images/css.svg"
 import TailwindIcon from "../images/tailwind.svg"
@@ -25,9 +21,6 @@ import FramerIcon from "../images/framer.svg"
 import NextIcon from "../images/nextjs.svg"
 import ContentfulIcon from "../images/contentful.svg"
 import GraphQLIcon from "../images/graphql.svg"
-
-import Downloadable from "../files/ResumePS-072622.pdf"
-
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     return (
@@ -48,10 +41,8 @@ function Sidebar({ sideBar = false, setSideBar = () => {} }) {
     )
 }
 
-const Resume = () => {
+const ResumeOnly = () => {
     const [sideBar, setSideBar] = useState(false)
-    const [scale] = useState(0)
-    const [startAnim, setStartAnim] = useState(true)
 
     return (
         <AnimatePresence>
@@ -62,7 +53,7 @@ const Resume = () => {
                 exit={{ opacity: 0 }}
             >
                 <div id="container">
-                    <nav className={`fixed flex px-5 pt-12 pb-6 w-full z-40 justify-between bg-white flex-row`}>
+                    {/* <nav className={`fixed flex px-5 pt-12 pb-6 w-full z-40 justify-between bg-white flex-row`}>
                         <div id="menu-button">
                         {sideBar ? (
                             <motion.div animate={{ rotate: 360 }} transition={{ duration: 0.5 }}>
@@ -81,13 +72,13 @@ const Resume = () => {
                                 <DownloadIcon />
                             </a>
                         </motion.div>
-                    </nav>
+                    </nav> */}
                     <div id="pop-in">
                         <Sidebar {...{ sideBar, setSideBar }} className="fixed z-50"/>
                     </div>
                     <motion.div 
                         id="main-container" 
-                        className="flex flex-col w-auto pt-32 mx-7 md:mx-24 lg:mx-60 gap-2"
+                        className="flex flex-col w-auto mx-7 md:mx-24 lg:mx-60 gap-1"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: sideBar ? 0 : 1, display: sideBar ? "none" : "flex" }}
                         exit={{ opacity: 0 }}
@@ -95,12 +86,12 @@ const Resume = () => {
                     >
                         <div id="name-and-info">
                             <h1 className="text-3xl font-bold">Patrick Sriprachandr</h1>
-                            <h3 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 text-xl">
+                            <h3 className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 text-xl">
                                 <div id="left">
+                                    <p>(619) 733-7222 | psriprac@gmail.com</p>
                                     <p>San Diego, CA</p>
-                                    <p>psriprac@gmail.com</p>
                                 </div>
-                                <div id="right" className="md:justify-self-end md:text-right lg:text-right lg:justify-self-end">
+                                <div id="right" className="justify-self-end text-right lg:text-right lg:justify-self-end">
                                     <p><a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a></p>
                                     <p><a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a></p>
                                 </div>
@@ -109,7 +100,7 @@ const Resume = () => {
 
                         <div id="dev-tech">
                             <h2 className="text-2xl font-bold border-b-2">Development Technologies</h2>
-                            <ul className="grid grid-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pl-5 pt-2 items-center">
+                            <ul className="grid grid-row grid-cols-4 md:grid-cols-3 lg:grid-cols-4 pl-0 pt-2 items-center gap-x-6">
                                 <li className="py-0"><p className="relative left-8 -top-1 -mb-7">HTML</p><HTMLIcon className="w-5 h-[26px]"/></li>
                                 <li className="py-0"><p className="relative left-8 -top-1 -mb-7">CSS</p><CSSIcon className="w-5 h-[26px]"/></li>
                                 <li className="py-0"><p className="relative left-8 -top-1 -mb-7">Javascript</p><JSIcon className="w-5 h-[26px]"/></li>
@@ -231,7 +222,7 @@ const Resume = () => {
                                 <li>Completed fast paced and short-term daily objectives.</li>
                             </ul>
                         </div>
-                            <motion.div 
+                            {/* <motion.div 
                                 id="nextpage" 
                                 className="flex flex-row items-center pt-3 pb-20 gap-4"
                                 animate={{ scale: [scale, scale + 1.1, scale + 1] }}
@@ -245,9 +236,9 @@ const Resume = () => {
                                     >
                                         <h1 className="text-2xl">Contact</h1>
                                     </motion.button>
-                                </Link>
+                                </Link> */}
                             {/* <BackIcon style={{transform: "rotate(0deg)"}}/> */}
-                            </motion.div>
+                            {/* </motion.div> */}
                     </motion.div>
                 </div>
             </motion.div>
@@ -255,4 +246,4 @@ const Resume = () => {
     )
 }
 
-export default Resume
+export default ResumeOnly
