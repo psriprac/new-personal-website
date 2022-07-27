@@ -147,12 +147,11 @@ const Resume = () => {
                                 <p className="text-right text-gray-400">July 2022</p>
                             </div>
                             <p className="italic">Solutions stack: NextJS, Contentful, GraphQL, Netlify, and TailwindCSS.</p>
-                            <p className="italic">Outcomes: Gained understanding of how to build dynamic and fast static websites while sourcing data from a headless content management system.</p>
                             <a href="https://sriprachandr-blog.netlify.app" target="_blank" rel="noreferrer">Preview: https://sriprachandr-blog.netlify.app</a><br />
                             <a href="https://github.com/psriprac/nextjs-blog" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/nextjs-blog</a>
                             <ul className="list-disc pl-5">
-                                <li>Designed sample blog with NextJS to utilize the flexibility of static site generation.</li>
-                                <li>Implemented dynamic routing that creates a unique page per blog post at build time.</li>
+                            <li>Gained understanding of how to build dynamic and fast static websites while sourcing data from a headless content management system.</li>
+                                <li>Implemented dynamic routing from NextJS that creates a unique page per blog post at build time.</li>
                                 <li>Integrated Contentful as a decoupled data source to choose any performant front end.</li>
                                 <li>Utilized Contentful's GraphQL API endpoint to only query for necessary data.</li>
                                 <li>Built style from TailwindCSS class declarations for easy component creation.</li>
@@ -163,29 +162,15 @@ const Resume = () => {
                                 <p className="text-right text-gray-400">July 2022</p>
                             </div>
                             <p className="italic">Solutions stack: GatsbyJS, TailwindCSS, Netlify, and Framer Motion.</p>
-                            <p className="italic">Outcomes: Learned the end to end process of building a static website.</p>
                             <a href="https://sriprachandr.netlify.app" target="_blank" rel="noreferrer">Preview: https://sriprachandr.netlify.app</a><br />
                             <a href="https://github.com/psriprac/new-personal-website" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/new-personal-website</a>
                             <ul className="list-disc pl-5">
+                                <li>Learned the end to end process of building a static website.</li>
                                 <li>Designed and developed a responsive personal professional website, with pages for a resume and portfolio to host my work.</li>
                                 <li>Created a wire frame in Figma to outline the basic layout of the website.</li>
                                 <li>Animated components with the Framer Motion library for React to promote interactivity.</li>
                                 <li>Used the Gatsby Image Library to optimize images at different screen sizes.</li>
                                 <li>Implemented Formik as a full client side input validation solution on the Contact page.</li>
-                            </ul>
-                            <div className="flex flex-row text-base justify-between pt-2">
-                                <p className="text-base font-bold">Tic-Tac-Toe</p>
-                                <p className="text-right text-gray-400">May 2022</p>
-                            </div>
-                            <p className="italic">Solutions stack: HTML, CSS, and JavaScript.</p>
-                            <p className="italic">Outcomes: Educated on how JavaScript can access and manipulate the document object model.</p>
-                            <a href="https://psriprac.github.io/tic-tac-toe" target="_blank" rel="noreferrer">Preview: https://psriprac.github.io/tic-tac-toe</a><br />
-                            <a href="https://github.com/psriprac/tic-tac-toe" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/tic-tac-toe</a>
-                            <ul className="list-disc pl-5">
-                                <li>Developed 2-player tic-tac-toe game with no front end framework and custom styling.</li>
-                                <li>Implemented custom JavaScript rendering logic and manipultion of DOM elements.</li>
-                                <li>Created UI updates for win conditions to promote a better user experience.</li>
-                                <li>Utilized object oriented programming techniques to create each Player.</li>
                             </ul>
                         </div>
                         
@@ -217,18 +202,6 @@ const Resume = () => {
                                 <li>Completed same-day camera, battery, and screen repairs of iPhone 6 to iPhone 12.</li>
                                 <li>Translated high level technical terminology to end users that have little technical experience.</li>
                                 <li>Maintained a 2 to 3 day turn around time for the completion of repairs.</li>
-                            </ul>
-
-                            <div className="flex flex-row text-base justify-between pt-2">
-                                <p className="font-bold">Assistant Supervisor</p>
-                                <p className="text-right text-gray-400">Apr 2013 to Jan 2018</p>
-                            </div>
-                            <p className="text-base italic">SeaWorld San Diego</p>
-                            <ul className="list-disc pl-5">
-                                <li>Lead a team of up to 200 to create excellent arrival experiences for front gate ticket sales, guest service, parking, and tollbooth operations.</li>
-                                <li>Revised and created standard operating procedures for front gate operations.</li>
-                                <li>Prepared bi-weekly schedules for up to 200 team members.</li>
-                                <li>Completed fast paced and short-term daily objectives.</li>
                             </ul>
                         </div>
                             <motion.div 

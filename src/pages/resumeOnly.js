@@ -1,8 +1,5 @@
 import * as React from "react"
-import { AnimatePresence, motion } from "framer-motion"
-import { useState } from "react"
 
-import MenuPage from "./menu"
 import HTMLIcon from "../images/html.svg"
 import CSSIcon from "../images/css.svg"
 import TailwindIcon from "../images/tailwind.svg"
@@ -22,82 +19,32 @@ import NextIcon from "../images/nextjs.svg"
 import ContentfulIcon from "../images/contentful.svg"
 import GraphQLIcon from "../images/graphql.svg"
 
-function Sidebar({ sideBar = false, setSideBar = () => {} }) {
-    return (
-        <AnimatePresence>
-        {sideBar && (
-            <>
-            <motion.div
-                initial={{ x: "-100%" }}
-                animate={{ x: "0px" }}
-                exit={{ x: "-100%" }}
-                transition={{ style: "spring", bounce: 0, duration: 0.5 }}
-            >
-                <MenuPage />
-            </motion.div>
-            </>
-        )}
-        </AnimatePresence>
+const NameAndInfo = () => {
+    return(
+        <div id="name-and-info">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 text-l">
+                <div id="left">
+                    <h1 className="text-3xl font-bold">Patrick Sriprachandr</h1>
+                    <h3 className="text-xl italic">
+                            <p>Web Developer</p>
+                            <p>San Diego, CA</p>
+                        </h3>
+                </div>
+                <div id="right" className="justify-self-end text-right lg:text-right lg:justify-self-end">
+                    <p>(619) 733-7222</p>
+                    <p>psriprac@gmail.com</p>
+                    <p><a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a></p>
+                    <p><a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a></p>
+                </div>
+            </div>
+        </div>
     )
 }
 
 const ResumeOnly = () => {
-    const [sideBar, setSideBar] = useState(false)
-
     return (
-        <AnimatePresence>
-            <motion.div 
-                id="view"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-            >
-                <div id="container">
-                    {/* <nav className={`fixed flex px-5 pt-12 pb-6 w-full z-40 justify-between bg-white flex-row`}>
-                        <div id="menu-button">
-                        {sideBar ? (
-                            <motion.div animate={{ rotate: 360 }} transition={{ duration: 0.5 }}>
-                                <button><BackIcon onClick={() => {
-                                setSideBar((sideBar) => !sideBar)
-                                }} />  </button>
-                            </motion.div>) : <button> <BurgerIcon onClick={() => { setSideBar((sideBar) => !sideBar) }} /> </button>}
-                        </div>
-                        <motion.div 
-                            id="download"
-                            animate={{ scale: sideBar ? 0 : 1 }}
-                            transition={{ duration: sideBar ? 0 : 0.2 }}
-                            whileTap={{ scale: 0.8 }}
-                        >
-                            <a href={Downloadable} target="blank">
-                                <DownloadIcon />
-                            </a>
-                        </motion.div>
-                    </nav> */}
-                    <div id="pop-in">
-                        <Sidebar {...{ sideBar, setSideBar }} className="fixed z-50"/>
-                    </div>
-                    <motion.div 
-                        id="main-container" 
-                        className="flex flex-col w-auto mx-7 md:mx-24 lg:mx-60 gap-1"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: sideBar ? 0 : 1, display: sideBar ? "none" : "flex" }}
-                        exit={{ opacity: 0 }}
-                        transition={{ style: "spring", bounce: 0, duration: 0.5, delay: sideBar ? 0 : 0.5 }}
-                    >
-                        <div id="name-and-info">
-                            <h1 className="text-3xl font-bold">Patrick Sriprachandr</h1>
-                            <h3 className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 text-xl">
-                                <div id="left">
-                                    <p>(619) 733-7222 | psriprac@gmail.com</p>
-                                    <p>San Diego, CA</p>
-                                </div>
-                                <div id="right" className="justify-self-end text-right lg:text-right lg:justify-self-end">
-                                    <p><a href="https://sriprachandr.netlify.app/" target="_blank" rel="noreferrer">https://sriprachandr.netlify.app</a></p>
-                                    <p><a href="https://github.com/psriprac" target="_blank" rel="noreferrer">https://github.com/psriprac</a></p>
-                                </div>
-                            </h3>
-                        </div>
-
+                <div id="container" className="flex flex-col w-auto mx-7 md:mx-24 lg:mx-60 gap-5">
+                    <NameAndInfo />
                         <div id="dev-tech">
                             <h2 className="text-2xl font-bold border-b-2">Development Technologies</h2>
                             <ul className="grid grid-row grid-cols-4 md:grid-cols-3 lg:grid-cols-4 pl-0 pt-2 items-center gap-x-6">
@@ -122,15 +69,6 @@ const ResumeOnly = () => {
                             </ul>
                         </div>
 
-                        <div id="education">
-                            <h2 className="text-2xl font-bold border-b-2">Education</h2>
-                            <div className="flex flex-row text-base justify-between pt-2">
-                                <p>California State University, San Marcos</p>
-                                <p className="text-right text-gray-400">May 2020</p>
-                            </div>
-                            <p className="text-base italic">Bachelor of Science, Computer Science</p>
-                        </div>
-
                         <div id="projects">
                             <h2 className="text-2xl font-bold border-b-2">Projects</h2>
                             <div className="flex flex-row text-base justify-between pt-2">
@@ -138,12 +76,11 @@ const ResumeOnly = () => {
                                 <p className="text-right text-gray-400">July 2022</p>
                             </div>
                             <p className="italic">Solutions stack: NextJS, Contentful, GraphQL, Netlify, and TailwindCSS.</p>
-                            <p className="italic">Outcomes: Gained understanding of how to build dynamic and fast static websites while sourcing data from a headless content management system.</p>
                             <a href="https://sriprachandr-blog.netlify.app" target="_blank" rel="noreferrer">Preview: https://sriprachandr-blog.netlify.app</a><br />
                             <a href="https://github.com/psriprac/nextjs-blog" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/nextjs-blog</a>
                             <ul className="list-disc pl-5">
-                                <li>Designed sample blog with NextJS to utilize the flexibility of static site generation.</li>
-                                <li>Implemented dynamic routing that creates a unique page per blog post at build time.</li>
+                                <li>Gained understanding of how to build dynamic and fast static websites while sourcing data from a headless content management system.</li>
+                                <li>Implemented dynamic routing from NextJS that creates a unique page per blog post at build time.</li>
                                 <li>Integrated Contentful as a decoupled data source to choose any performant front end.</li>
                                 <li>Utilized Contentful's GraphQL API endpoint to only query for necessary data.</li>
                                 <li>Built style from TailwindCSS class declarations for easy component creation.</li>
@@ -154,31 +91,21 @@ const ResumeOnly = () => {
                                 <p className="text-right text-gray-400">July 2022</p>
                             </div>
                             <p className="italic">Solutions stack: GatsbyJS, TailwindCSS, Netlify, and Framer Motion.</p>
-                            <p className="italic">Outcomes: Learned the end to end process of building a static website.</p>
                             <a href="https://sriprachandr.netlify.app" target="_blank" rel="noreferrer">Preview: https://sriprachandr.netlify.app</a><br />
                             <a href="https://github.com/psriprac/new-personal-website" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/new-personal-website</a>
                             <ul className="list-disc pl-5">
+                                <li>Learned the end to end process of building a static website.</li>
                                 <li>Designed and developed a responsive personal professional website, with pages for a resume and portfolio to host my work.</li>
                                 <li>Created a wire frame in Figma to outline the basic layout of the website.</li>
                                 <li>Animated components with the Framer Motion library for React to promote interactivity.</li>
                                 <li>Used the Gatsby Image Library to optimize images at different screen sizes.</li>
                                 <li>Implemented Formik as a full client side input validation solution on the Contact page.</li>
                             </ul>
-                            <div className="flex flex-row text-base justify-between pt-2">
-                                <p className="text-base font-bold">Tic-Tac-Toe</p>
-                                <p className="text-right text-gray-400">May 2022</p>
-                            </div>
-                            <p className="italic">Solutions stack: HTML, CSS, and JavaScript.</p>
-                            <p className="italic">Outcomes: Educated on how JavaScript can access and manipulate the document object model.</p>
-                            <a href="https://psriprac.github.io/tic-tac-toe" target="_blank" rel="noreferrer">Preview: https://psriprac.github.io/tic-tac-toe</a><br />
-                            <a href="https://github.com/psriprac/tic-tac-toe" target="_blank" rel="noreferrer">GitHub: https://github.com/psriprac/tic-tac-toe</a>
-                            <ul className="list-disc pl-5">
-                                <li>Developed 2-player tic-tac-toe game with no front end framework and custom styling.</li>
-                                <li>Implemented custom JavaScript rendering logic and manipultion of DOM elements.</li>
-                                <li>Created UI updates for win conditions to promote a better user experience.</li>
-                                <li>Utilized object oriented programming techniques to create each Player.</li>
-                            </ul>
                         </div>
+
+                        <div className="pt-14"></div>
+
+                        <NameAndInfo />
                         
                         <div id="experience">
                             <h2 className="text-2xl font-bold border-b-2">Experience</h2>
@@ -209,40 +136,17 @@ const ResumeOnly = () => {
                                 <li>Translated high level technical terminology to end users that have little technical experience.</li>
                                 <li>Maintained a 2 to 3 day turn around time for the completion of repairs.</li>
                             </ul>
-
-                            <div className="flex flex-row text-base justify-between pt-2">
-                                <p className="font-bold">Assistant Supervisor</p>
-                                <p className="text-right text-gray-400">Apr 2013 to Jan 2018</p>
-                            </div>
-                            <p className="text-base italic">SeaWorld San Diego</p>
-                            <ul className="list-disc pl-5">
-                                <li>Lead a team of up to 200 to create excellent arrival experiences for front gate ticket sales, guest service, parking, and tollbooth operations.</li>
-                                <li>Revised and created standard operating procedures for front gate operations.</li>
-                                <li>Prepared bi-weekly schedules for up to 200 team members.</li>
-                                <li>Completed fast paced and short-term daily objectives.</li>
-                            </ul>
                         </div>
-                            {/* <motion.div 
-                                id="nextpage" 
-                                className="flex flex-row items-center pt-3 pb-20 gap-4"
-                                animate={{ scale: [scale, scale + 1.1, scale + 1] }}
-                                transition={{ duration: 0.5, delay: startAnim ? 0.8 : 0 }} onClick={() => setStartAnim(false)}
-                            >
-                                <Link to="/contact">
-                                    <motion.button 
-                                        className="bg-[#57f179] rounded-full p-7"
-                                        whileTap={{ scale: 0.9 }}
-                                        whileHover={{ scale: 1.1 }}
-                                    >
-                                        <h1 className="text-2xl">Contact</h1>
-                                    </motion.button>
-                                </Link> */}
-                            {/* <BackIcon style={{transform: "rotate(0deg)"}}/> */}
-                            {/* </motion.div> */}
-                    </motion.div>
-                </div>
-            </motion.div>
-        </AnimatePresence>
+
+                        <div id="education">
+                            <h2 className="text-2xl font-bold border-b-2">Education</h2>
+                            <div className="flex flex-row text-base justify-between pt-2">
+                                <p>California State University, San Marcos</p>
+                                <p className="text-right text-gray-400">May 2020</p>
+                            </div>
+                            <p className="text-base italic">Bachelor of Science, Computer Science</p>
+                        </div>
+                </div>      
     )
 }
 
