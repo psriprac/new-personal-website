@@ -117,7 +117,7 @@ const ResumeOnly = () => {
                             <ul className="list-disc pl-5">
                                 <li>Resolved level 1 and level 2 IT issues in an enterprise environment to improve resolution rates by 8% in the first two months of the role.</li>
                                 <li>Configured, maintained, and supported virtual machines with VMWare Horizon VDI.</li>
-                                <li>Implemented instant clone features for improved deployment workflows for zero downtime and eliminating the need for maintainence windows.</li>
+                                <li>Implemented instant clone features for improved deployment workflows for zero downtime and eliminating the need for maintenance windows.</li>
                                 <li>Optimized, managed, and deployed base images for 200+ VMware VDI Desktops to reduce the average log on time by 1 minute.</li>
                                 <li>Created process standards for IT Hardware Asset Management.</li>
                                 <li>Maintained enterprise Active Directory containing over 1200 members.</li>
